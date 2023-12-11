@@ -1,3 +1,5 @@
+import time
+
 filename = "input2.txt"
 
 
@@ -66,6 +68,7 @@ def get_extra_for_crossing_empties(
     return extra
     
 
+start_time = time.time()
 galaxy, num_galaxies = read_galaxy()
 galaxies_positions = {
     galaxy[idx][idy]: (idx, idy)
@@ -84,3 +87,4 @@ total = sum([
     for i, j in pairs
 ])
 print("TOTAL: ", total)
+print("--- %s seconds ---" % (time.time() - start_time))
